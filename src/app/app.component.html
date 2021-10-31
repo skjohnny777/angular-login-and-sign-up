@@ -1,0 +1,48 @@
+
+
+<div class="body">
+
+<div class="navbar">
+    <div class="max-width">
+      <div class="logo">
+        <a href="#">Login<span>Page.</span></a>
+      </div>
+
+      <ul class="menu">
+        <li><a href="">Home</a></li>
+        <li><a href="#">servicrs</a></li>
+        <li><a href="">teams</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+  </div>
+
+<div  class="form " *ngIf="!isSignedIn">
+
+<div class="iop"  >
+
+  <h1>Create an Account</h1>
+
+  <input type="text" placeholder="email" #emailSignup/>
+
+  <input type="text" placeholder="password" #passwordSignup/>
+
+  
+  <button class="asd" (click)="onSignup(emailSignup.value,passwordSignup.value)">create</button>
+
+</div>
+
+
+
+<div class="qwe" *ngIf="!isSignedIn">
+  <h1>Login</h1>
+  <input class="nmw" placeholder="Email" type="text" #email/>
+  <input  class="nmw" placeholder="password" type="text" #password/>
+  <button class="btn" (click)="onSignin(email.value,password.value)">Login</button>
+</div>
+
+</div>
+
+<app-test *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-test>
+</div>
